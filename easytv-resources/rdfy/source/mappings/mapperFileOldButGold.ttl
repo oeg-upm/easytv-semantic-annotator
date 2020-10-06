@@ -1,0 +1,226 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#>. 
+@prefix rml: <http://semweb.mmlab.be/ns/rml#>. 
+@prefix ql: <http://semweb.mmlab.be/ns/ql#>. 
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>. 
+@prefix lemon: <http://lemon-model.net/lemon#>. 
+@prefix etvonto: <https://w3id.org/def/easytv#>. 
+@prefix etvdata: <http://easytv.linkeddata.es/resource/>. 
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> . 
+@base <http://easytv.linkeddata.es/resource/mapping>. 
+                  
+                  
+                 <#mappingVideo> 
+                   	rml:logicalSource [ 
+                     	rml:source "C:\Users\Pablo\Desktop\easyResources\WEB-INF\source\json\videoSL.json"; 
+                     	rml:referenceFormulation ql:JSONPath; 
+                     	rml:iterator "$" 
+                   	]; 
+                  
+                  
+                   	rr:subjectMap [ 
+                     	rr:template "http://easytv.linkeddata.es/resource/Video/{UrlID}"; 
+                     	rr:class etvonto:Video ; 
+                     	rr:graphMap [ rr:template "http://easytv.linkeddata.es/graph/{UrlID}" ] 
+                   	]; 
+                  
+                   rr:predicateObjectMap [ 
+                     rr:predicate lemon:language; 
+                     rr:objectMap [ 
+                       rml:reference "Language"  
+                     ] 
+                   ]; 
+                  
+                   rr:predicateObjectMap [ 
+                     rr:predicate etvonto:url; 
+                     rr:objectMap [ 
+                       rml:reference "Url"  
+                     ] 
+                   ] 
+                  . 
+                  
+                  
+                 <#mappingSignedLinguisticExpression> 
+                   	rml:logicalSource [ 
+                     	rml:source "C:\Users\Pablo\Desktop\easyResources\WEB-INF\source\json\videoSL.json"; 
+                     	rml:referenceFormulation ql:JSONPath; 
+                     	rml:iterator "$" 
+                   	]; 
+                  
+                  
+                   	rr:subjectMap [ 
+                     	rr:template "http://easytv.linkeddata.es/resource/SignedLinguisticExpression/{Sls}{UrlID}"; 
+                     	rr:class etvonto:SignedLinguisticExpression ; 
+                     	rr:graphMap [ rr:template "http://easytv.linkeddata.es/graph/{UrlID}" ] 
+                  
+                   	]; 
+                  
+                   rr:predicateObjectMap [ 
+                     rr:predicate etvonto:hasRealization; 
+                     rr:objectMap [ 
+                       rr:parentTriplesMap <#mappingVideo>; #check 
+                     ] 
+                   ]; 
+                  
+                   rr:predicateObjectMap [ 
+                     rr:predicate etvonto:decomposition; 
+                     rr:objectMap [ 
+                       rr:template "http://easytv.linkeddata.es/resource/LinguisticExpressionItem/{Sls}{UrlID}1"; 
+                       rr:termType rr:IRI 
+                     ] 
+                   ] 
+                  
+                  . 
+                  
+                 <#mappingWrittenLinguisticExpression> 
+                   	rml:logicalSource [ 
+                     	rml:source "C:\Users\Pablo\Desktop\easyResources\WEB-INF\source\json\videoSL.json"; 
+                     	rml:referenceFormulation ql:JSONPath; 
+                     	rml:iterator "$" 
+                   	]; 
+                  
+                   	rr:subjectMap [ 
+                     	rr:template "http://easytv.linkeddata.es/resource/WrittenLinguisticExpression/{Nls}{UrlID}"; 
+                     	rr:class etvonto:WrittenLinguisticExpression ; 
+                 		rr:graphMap [ rr:template "http://easytv.linkeddata.es/graph/{UrlID}" ] 
+                  
+                   	]; 
+                  
+                   rr:predicateObjectMap [ 
+                     rr:predicate etvonto:hasRealization; 
+                     rr:objectMap [ 
+                       rr:parentTriplesMap <#mappingVideo>; #check 
+                     ] 
+                   ] 
+                  . 
+                  
+                  
+                 <#mappingSegment> 
+                   	rml:logicalSource [ 
+                     	rml:source "C:\Users\Pablo\Desktop\easyResources\WEB-INF\source\json\videoSL.json"; 
+                     	rml:referenceFormulation ql:JSONPath; 
+                     	rml:iterator "$.Segments[*]" 
+                   	]; 
+                  
+                  
+                   	rr:subjectMap [ 
+                     	rr:template "http://easytv.linkeddata.es/resource/LinguisticExpressionItem/{Sls}{UrlID}{Order}"; 
+                     	rr:class etvonto:LinguisticExpressionItem  
+                   	]; 
+                  
+                   rr:predicateObjectMap [ 
+                     rr:predicate etvonto:nextItem; 
+                     rr:objectMap [ 
+                       rr:template "http://easytv.linkeddata.es/resource/LinguisticExpressionItem/{Sls}{UrlID}{NextOrder}"; 
+                       rr:termType rr:IRI 
+                     ] 
+                   ]; 
+                  
+                   rr:predicateObjectMap [ 
+                     rr:predicate etvonto:hasForm; 
+                     rr:objectMap [ 
+                       rr:template "http://easytv.linkeddata.es/resource/Form/{Sls}{UrlID}{Order}{Word}"; 
+                       rr:termType rr:IRI 
+                     ] 
+                   ] 
+                  
+                  . 
+                  
+                 <#mappingForm> 
+                   	rml:logicalSource [ 
+                     	rml:source "C:\Users\Pablo\Desktop\easyResources\WEB-INF\source\json\videoSL.json"; 
+                     	rml:referenceFormulation ql:JSONPath; 
+                     	rml:iterator "$.Segments[*]" 
+                   	]; 
+                  
+                  
+                   	rr:subjectMap [ 
+                     	rr:template "http://easytv.linkeddata.es/resource/Form/{Sls}{UrlID}{Order}{Word}"; 
+                     	rr:class lemon:Form  
+                   	]; 
+                  
+                   rr:predicateObjectMap [ 
+                     rr:predicate lemon:writtenRep; 
+                     rr:objectMap [ 
+                       rml:reference "Word"; 
+                     ] 
+                   ] 
+                  
+                  . 
+                  
+                 <#mappingLexicalEntry> 
+                   	rml:logicalSource [ 
+                     	rml:source "C:\Users\Pablo\Desktop\easyResources\WEB-INF\source\json\videoSL.json"; 
+                     	rml:referenceFormulation ql:JSONPath; 
+                     	rml:iterator "$.Segments[*]" 
+                   	]; 
+                  
+                  
+                   	rr:subjectMap [ 
+                     	rr:template "http://easytv.linkeddata.es/resource/LexicalEntry/{Sls}{UrlID}{Order}{Lemma}"; 
+                     	rr:class lemon:LexicalEntry  
+                   	]; 
+                  
+                   rr:predicateObjectMap [ 
+                     rr:predicate lemon:language; 
+                     rr:objectMap [ 
+                       rml:reference "Language"; 
+                     ] 
+                   ]; 
+                  
+                   rr:predicateObjectMap [ 
+                     rr:predicate lemon:canonicalForm; 
+                     rr:objectMap [ 
+                       rr:template "http://easytv.linkeddata.es/resource/Form/{Sls}{UrlID}{Order}{Word}"; 
+                       rr:termType rr:IRI 
+                     ] 
+                   ]; 
+                  
+                   rr:predicateObjectMap [ 
+                     rr:predicate lemon:sense; 
+                     rr:objectMap [ 
+                       rml:reference "Synsets[*].Sense" ;         
+                       rr:termType rr:IRI 
+                     ] 
+                   ] 
+                  
+                  . 
+                  
+                  
+                  
+                  <#mappingSense> 
+                   	rml:logicalSource [ 
+                     	rml:source "C:\Users\Pablo\Desktop\easyResources\WEB-INF\source\json\videoSL.json"; 
+                     	rml:referenceFormulation ql:JSONPath; 
+                     	rml:iterator "$.Segments[*].Synsets[*]" 
+                   	]; 
+                  
+                  
+                   	rr:subjectMap [ 
+                     	rml:reference "Sense"; 
+                     	rr:class lemon:LexicalSense  
+                   	]; 
+                  
+                   rr:predicateObjectMap [ 
+                     rr:predicate lemon:reference; 
+                     rr:objectMap [ 
+                         rml:reference "Url"; 
+                         rr:termType rr:IRI 
+                     ] 
+                   ]; 
+                  
+                  . 
+                  
+                  <#mappingSynset> 
+                   	rml:logicalSource [ 
+                     	rml:source "C:\Users\Pablo\Desktop\easyResources\WEB-INF\source\json\videoSL.json"; 
+                     	rml:referenceFormulation ql:JSONPath; 
+                     	rml:iterator "$.Segments[*].Synsets[*]" 
+                   	]; 
+                  
+                  
+                   	rr:subjectMap [ 
+                     	rml:reference "Url"; 
+                     	rr:class skos:Concept  
+                   	]; 
+                  
+                 .

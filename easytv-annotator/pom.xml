@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>oeg</groupId>
+    <artifactId>easytv-annotator</artifactId>
+    <version>1.0</version>
+    <packaging>jar</packaging>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+    
+
+    <dependencies>
+         
+        <!--- test -->
+        
+         <!--dependency>
+            <groupId>oeg.helio.core</groupId>
+            <artifactId>helio-core</artifactId>
+            <version>0.2.1</version>
+        </dependency-->
+       
+       <!--dependency>
+           <groupId>com.fasterxml.jackson.core</groupId>
+           <artifactId>jackson-databind</artifactId>
+           <version>2.8.5</version>
+        </dependency-->
+
+       <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.9.10.1</version>
+        </dependency>
+        
+        <dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-annotations</artifactId>
+    <version>2.9.10</version>
+</dependency>
+
+       
+       
+        <dependency>
+            <groupId>it.uniroma1.lcl.babelnet</groupId>
+            <artifactId>babelnet-api</artifactId>
+            <version>4.0.1</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>com.babelscape</groupId>
+            <artifactId>babelscape</artifactId>
+            <version>1.0</version>
+        </dependency>
+        
+       
+  
+        <!-- https://mvnrepository.com/artifact/commons-beanutils/commons-beanutils -->
+        <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+            <version>1.7.0</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/commons-beanutils/commons-beanutils-core -->
+        <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils-core</artifactId>
+            <version>1.7.0</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.8</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/commons-collections/commons-collections -->
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+            <version>3.2</version>
+        </dependency>
+
+
+        <!-- https://mvnrepository.com/artifact/commons-configuration/commons-configuration -->
+        <dependency>
+            <groupId>commons-configuration</groupId>
+            <artifactId>commons-configuration</artifactId>
+            <version>1.5</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/commons-digester/commons-digester -->
+        <dependency>
+            <groupId>commons-digester</groupId>
+            <artifactId>commons-digester</artifactId>
+            <version>1.8</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/commons-lang/commons-lang -->
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.3</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/commons-logging/commons-logging -->
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.1</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.8.2</version>
+        </dependency>
+         
+        <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>23.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.3.6</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpcore -->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpcore</artifactId>
+            <version>4.3.3</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.ibm.icu/icu4j -->
+        <dependency>
+            <groupId>com.ibm.icu</groupId>
+            <artifactId>icu4j</artifactId>
+            <version>56.1</version>
+        </dependency>
+   
+        <!-- https://mvnrepository.com/artifact/edu.mit/jwi -->
+        <dependency>
+            <groupId>edu.mit</groupId>
+            <artifactId>jwi</artifactId>
+            <version>2.2.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>it.uniroma1.lcl.jlt</groupId>
+            <artifactId>lcl-jlt</artifactId>
+            <version>2.4</version>
+        </dependency>
+
+
+
+
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.1</version>
+        </dependency>
+
+
+
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-analyzers-common</artifactId>
+            <version>7.2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-core</artifactId>
+            <version>7.2.0</version>
+        </dependency>
+         <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-queries</artifactId>
+            <version>7.2.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.lucene/lucene-queryparser -->
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-queryparser</artifactId>
+            <version>7.2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-sandbox</artifactId>
+            <version>7.2.0</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.2.3</version>
+            <!--scope>test</scope-->
+        </dependency>
+
+
+        <!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-core -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+            <version>1.2.3</version>
+        </dependency>
+
+
+        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.25</version>
+        </dependency>
+
+
+
+
+
+        <!--     STANFORD      -->
+        <dependency>
+            <groupId>edu.stanford.nlp</groupId>
+            <artifactId>stanford-corenlp</artifactId>
+            <version>3.9.2</version>
+        </dependency>
+        <dependency>
+            <groupId>edu.stanford.nlp</groupId>
+            <artifactId>stanford-corenlp</artifactId>
+            <version>3.9.2</version>
+            <classifier>models</classifier>
+        </dependency>
+        <dependency>
+            <groupId>edu.stanford.nlp</groupId>
+            <artifactId>stanford-parser</artifactId>
+            <version>3.9.2</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>edu.stanford.nlp</groupId>
+            <artifactId>stanford-corenlp</artifactId>
+            <version>3.9.2</version>
+            <classifier>models-spanish</classifier>
+        </dependency>
+        <!--dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>14.0.1</version>
+        </dependency-->
+        <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpmime -->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpmime</artifactId>
+            <version>4.3.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>it.uniroma1.lcl.babelfy</groupId>
+            <artifactId>babelfy-online</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>it.uniroma1.lcl.babelfy.commons</groupId>
+            <artifactId>babelfy-commons</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+        
+        
+        
+        <!-- IXA -->
+
+        <!-- https://mvnrepository.com/artifact/eus.ixa/ixa-pipe-nerc -->
+        <dependency>
+            <groupId>eus.ixa</groupId>
+            <artifactId>ixa-pipe-nerc</artifactId>
+            <version>1.6.0</version>
+            <!--version>2.0.0</version-->
+            <type>jar</type>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/eus.ixa/ixa-pipe-doc -->
+        <dependency>
+            <groupId>eus.ixa</groupId>
+            <artifactId>ixa-pipe-doc</artifactId>
+            <version>0.0.3</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/eus.ixa/ixa-pipe-chunk -->
+        <dependency>
+            <groupId>eus.ixa</groupId>
+            <artifactId>ixa-pipe-chunk</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+     
+
+        <!-- https://mvnrepository.com/artifact/eus.ixa/ixa-pipe-tok -->
+        <dependency>
+            <groupId>eus.ixa</groupId>
+            <artifactId>ixa-pipe-tok</artifactId>
+            <version>1.8.6</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/eus.ixa/ixa-pipe-pos -->
+        <dependency>
+            <groupId>eus.ixa</groupId>
+            <artifactId>ixa-pipe-pos</artifactId>
+            <version>1.5.3</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>eus.ixa</groupId>
+            <artifactId>ixa-pipe-parse</artifactId>
+            <version>1.1.2</version>
+        </dependency>
+        
+        <dependency>
+			<groupId>org.apache.opennlp</groupId>
+			<artifactId>opennlp-tools</artifactId>
+			<version>1.6.0</version>
+			
+		</dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>2.9.0</version>
+            <type>jar</type>
+        </dependency>
+    </dependencies>
+    
+
+    
+      <build>
+          <pluginManagement>
+            <plugins>
+             
+              
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-dependency-plugin</artifactId>
+                    <version>2.8</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>2.5</version>
+                </plugin>
+                
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-install-plugin</artifactId>
+                    <version>2.5.2</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+       
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy-dependencies</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.basedir}/dist/lib</outputDirectory>
+                            <overWriteReleases>true</overWriteReleases>
+                            <overWriteSnapshots>true</overWriteSnapshots>
+                            <overWriteIfNewer>true</overWriteIfNewer>
+                        </configuration>
+                    </execution>
+                   
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>**/*.properties</exclude>
+                    </excludes>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <classpathPrefix>lib/</classpathPrefix>
+                           <mainClass>oeg.easytvannotator.Execution</mainClass>
+                        </manifest>
+                        <manifestEntries>
+                            <Class-Path>../config/</Class-Path>
+                            <Revision>${project.version}</Revision>
+                        </manifestEntries>
+                    </archive>
+                    <outputDirectory>${project.basedir}/dist</outputDirectory>
+                </configuration>
+            </plugin>
+            
+            
+             <!-- INSTALL DEPENDENCIES -->
+         <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-install-plugin</artifactId>
+                
+                <executions>
+                    <execution>
+                        <id>install-external1</id>
+                        <phase>clean</phase>
+                        <configuration>
+                            <file>${basedir}/lib/babelnet-api-3.7.1.jar</file>
+                            <repositoryLayout>default</repositoryLayout>
+                            <groupId>it.uniroma1.lcl.babelnet</groupId>
+                            <artifactId>babelnet-api</artifactId>
+                            <version>3.7.1</version>
+                            <packaging>jar</packaging>
+                            <generatePom>true</generatePom>
+                        </configuration>
+                        <goals>
+                            <goal>install-file</goal>
+                        </goals>
+                    </execution>
+                     <execution>
+                        <id>install-external2</id>
+                        <phase>clean</phase>
+                        <configuration>
+                            <file>${basedir}/lib/jltutils-2.2.jar</file>
+                            <repositoryLayout>default</repositoryLayout>
+                            <groupId>it.uniroma1.lcl.jlt</groupId>
+                            <artifactId>jltutils</artifactId>
+                            <version>2.2</version>
+                            <packaging>jar</packaging>
+                            <generatePom>true</generatePom>
+                        </configuration>
+                        <goals>
+                            <goal>install-file</goal>
+                        </goals>
+                    </execution>
+                     <execution>
+                        <id>install-external3</id>
+                        <phase>clean</phase>
+                        <configuration>
+                            <file>${basedir}/lib/babelfy-online-1.0.jar</file>
+                            <repositoryLayout>default</repositoryLayout>
+                            <groupId>it.uniroma1.lcl.babelfy</groupId>
+                            <artifactId>babelfy-online</artifactId>
+                            <version>1.0</version>
+                            <packaging>jar</packaging>
+                            <generatePom>true</generatePom>
+                        </configuration>
+                        <goals>
+                            <goal>install-file</goal>
+                        </goals>
+                    </execution>
+                     <execution>
+                        <id>install-external4</id>
+                        <phase>clean</phase>
+                        <configuration>
+                            <file>${basedir}/lib/babelfy-commons-1.0.jar</file>
+                            <repositoryLayout>default</repositoryLayout>
+                            <groupId>it.uniroma1.lcl.babelfy.commons</groupId>
+                            <artifactId>babelfy-commons</artifactId>
+                            <version>1.0</version>
+                            <packaging>jar</packaging>
+                            <generatePom>true</generatePom>
+                        </configuration>
+                        <goals>
+                            <goal>install-file</goal>
+                        </goals>
+                    </execution>
+                    
+                    
+                </executions>
+         </plugin>
+            
+            
+        </plugins>
+        
+       
+
+    </build>
+</project>
